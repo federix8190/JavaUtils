@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+
+	<!-- USSD parameters -->
+	<entry key="shortNumber">131</entry>
+	<entry key="AOL_AppOrigen">USSD_454</entry>
+	<entry key="AOL_AppOrigenParam">appOrigen=USSD_454</entry>
+
+	<entry key="ussdSystemId">esme19</entry>
+	<entry key="ussdPassword">esme19</entry>
+	<entry key="ussdHost">10.129.4.93</entry>
+	<entry key="ussdPort">5016</entry>
+
+	<entry key="ussdSystemId_1">esme19</entry>
+	<entry key="ussdPassword_1">esme19</entry>
+	<entry key="ussdHost_1">10.129.4.94</entry>
+	<entry key="ussdPort_1">5016</entry>
+
+	<entry key="ussdSystemId_2">esme19</entry>
+	<entry key="ussdPassword_2">esme19</entry>
+	<entry key="ussdHost_2">10.129.4.94</entry>
+	<entry key="ussdPort_2">5016</entry>
+
+	<entry key="ussdSystemId_3">esme19</entry>
+	<entry key="ussdPassword_3">esme19</entry>
+	<entry key="ussdHost_3">10.129.4.94></entry>
+	<entry key="ussdPort_3">5016</entry>
+
+	<!-- Log files -->
+	<entry key="logFile">logs/mimundo.log</entry>
+	<entry key="ussdPacketslogFile">logs/ussdPackets.log</entry>
+
+	<entry key="loggerUrl">http://10.150.12.20:81/wvlogger/wvlogerws.asmx</entry> <!-- Produccion -->
+	<entry key="loggerAppName">MiMundoUssd</entry>
+	<entry key="loggerNroApp">WindowsService</entry>
+
+	<entry key="timezone">America/Asuncion</entry>
+	<entry key="timeGMT">GMT-4</entry>
+
+	<!-- Servicios REST -->
+	<entry key="hostApiMiMundo">10.150.16.123</entry>
+	<entry key="portApiMiMundo">8080</entry>
+	<entry key="urlBaseApiMiMundo">/mundo/v1/</entry>
+	<entry key="urlBaseMiMundo">https://www.personal.com.py/#/seguridad/validacion-factura-electronica/</entry>
+
+	<entry key="hostOauth">10.150.16.123</entry>
+	<entry key="portOauth">8080</entry>
+	<entry key="urlBaseOauth">/oauth2/v1/</entry>
+
+	<entry key="hostApiPacksGateway">lbpre-ha.sis.personal.net.py</entry>
+	<entry key="portApiPacksGateway">80</entry>
+	<entry key="urlBaseApiPacksGateway">/packs-gateway/api/</entry>
+
+	<entry key="hostAOL">10.150.44.84</entry>
+	<entry key="portAOL">80</entry>
+	<entry key="urlBaseAOL">/WebVAS/Tppy_midool/RestApi/</entry>
+
+	<entry key="hostCRM">crmdesbal-vip.sis.personal.net.py</entry>
+	<entry key="portCRM">80</entry>
+	<entry key="urlBaseCRM">/crm/api/integracion/eventos/</entry>
+
+	<entry key="hostCRMToken">crm7des-jb2.sis.personal.net.py</entry>
+	<entry key="portCRMToken">8380</entry>
+	<entry key="urlBaseCRMToken">/auth/realms/nucleo/protocol/openid-connect/token</entry>
+
+	<entry key="hostConsultaSaldo">10.150.12.198</entry>
+	<entry key="portConsultaSaldo">80</entry>
+	<entry key="urlBaseConsultaSaldo">/WebVAS/ConsultaSaldo/RestApi/</entry>
+
+	<entry key="hostBacktones">10.129.2.155</entry>
+	<entry key="portBacktones">8080</entry>
+	<entry key="urlBaseBacktones">/RBTWebServicesRest/</entry>
+	<entry key="tokenBacktones">Autogestion</entry>
+
+	<entry key="hostConsultaFyF">10.150.44.100</entry>
+	<entry key="portConsultaFyF">8080</entry>
+
+	<!-- Constantes -->
+	<entry key="menuTitleMiMundo">Bienvenido </entry>
+	<entry key="smsMusica">444</entry>
+	<entry key="smsClub">444</entry>
+	<entry key="smsVideo">843</entry>
+	<entry key="smsBacktone">843</entry>
+	<entry key="facturaServ">FATEL</entry>
+
+	<entry key="contraFactServ">REC_FACT</entry>
+	<entry key="p2pServ">P2P</entry>
+	<entry key="p2pServDes">TRANSF. SALDO BASICO</entry>
+	<entry key="p2pFullServ">P2PF</entry>
+	<entry key="p2pFullServDes">TRANSF. SALDO FULL</entry>
+	<entry key="p2pFullTope">150.000Gs</entry>
+	<entry key="p2pTope">20.000Gs</entry>
+
+<entry key="menuPrincipal">
+1. Mi Linea
+2. Saldos
+3. Recarga
+4. Servicios
+5. Config. Telefono</entry>
+
+<!--	<entry key="menuPrincipal">
+	1. Mi Linea
+	2. Saldos
+	3. Recarga
+	4. Servicios
+	5. Telefonos</entry>-->
+
+<!--<entry key="menuPrincipal">
+1. Multiplicate
+2. Mi Linea
+3. Saldos
+4. Recarga
+5. Servicios
+6. Telefonos
+7. Suspension</entry>-->
+
+<entry key="menuMultiplicate">Multiplicate
+1. Alta a la Promo
+2. Salir de la Promo
+3. Reactivar</entry>
+
+<entry key="menuMiLinea">Mi Linea
+1. Factura Pendiente
+2. Ultimas 3 Facturas
+3. Club Personal
+4. Consulta de Packs
+</entry>
+<!--<entry key="menuMiLinea">Mi Linea
+1. Factura Pendiente
+2. Ultimas 3 Facturas
+3. Club Personal
+4. Clave Personal</entry>-->
+
+<entry key="menuClub">Club Personal
+1. Asociarse
+2. Consulta de Puntos
+3. Canje</entry>
+
+<entry key="menuClubPuntos">Club Personal(Puntos)
+1. Disponibles
+2. A vencer</entry>
+
+<entry key="menuClave">Clave Personal
+1. Estado
+2. Resetear clave
+3. Desbloquear clave</entry>
+
+<entry key="menuRecarga">Recarga
+1. Prestame
+2. Recargame
+3. Pasar Saldo
+4. Recarga Contra Factura
+5. Puntos de Recarga
+6. Consulta Prestamos Pendientes</entry>
+
+<entry key="menuIlimitado">
+7. Reactivar Plan Ilimitado</entry>
+
+<entry key="menuAtras">0. Atras</entry>
+
+<entry key="menuTelefono">Telefono
+1. Configuracion
+2. Comprar
+3. Nuevas Lineas</entry>
+
+<entry key="menuSuspension">Suspension
+1. Robo o Extravio
+2. Susp. Voluntaria
+3. Restitucion Voluntaria</entry>
+
+<entry key="menuServicios">Servicios
+1. Back Tones
+2. Personal Musica
+3. Personal Video
+4. Destinos Gratuitos
+5. Factura Electronica</entry>
+
+<entry key="menuRbt">BackTones
+1. Mis BackTones
+2. Comprar BackTones
+3. Desactivar BackTones</entry>
+
+<entry key="menuDestinos">Destinos Gratuitos
+1. Mis destinos
+2. Agregar destino
+3. Desactivar servicio</entry>
+
+<entry key="menuFatel">Factura Electronica %s
+1. %s Fact. Electronica
+2. Cambiar mail</entry>
+
+	<entry key="codigoPacks">"SOLOXHOY","COMBOS","ROAMING","AHORRO","ILIM","BBRY","INTERNAC"</entry>
+	<entry key="msjParamIncorrecto">Los datos ingresados no son correctos.</entry>
+	<entry key="msjCanje">En breve recibiras un mensaje con los pasos a seguir para canjear premios del Club.</entry>
+	<entry key="msjDesbloqueo">El desbloqueo de tu clave personal fue exitosa.</entry>
+	<entry key="msjError">Este servicio USSD no responde en este momento, favor intenta mas tarde</entry>
+	<entry key="msjErrorSuspencion">No se pudo suspender la linea %s, por favor intente mas tarde o comuniquese al *111.</entry>
+	<entry key="msjErrorRestitucion">No se pudo restituir la linea %s, por favor intente mas tarde o comuniquese al *111.</entry>
+	<entry key="msjSuspExitosa">La suspencion de la linea %s se ha realizado exitosamente.</entry>
+	<entry key="msjConfigOK">En breve recibiras mensajes para configurar tu Personal. Elegi GUARDAR o ACTUALIZAR cuando los recibas. Si te pide un PIN ingresa 0000</entry>
+	<entry key="msjTicketOK">Solicitud Realizada exitosamente, en breve se contactara un representante.</entry>
+	<entry key="msjPuntosRecarga">En breve recibiras un mensaje con los puntos de recarga mas cercanos.</entry>
+	<entry key="msjrecargaConfirmacion">Confirmar recarga de Gs. %s que seran cancelados con tu proxima factura.</entry>
+	<entry key="msjCancelar">La operacion ha sido cancelada.</entry>
+	<entry key="msjExitosa">La operacion se ha realizado exitosamente.</entry>
+	<entry key="msjMisRbt">En breve recibiras un mensaje con los backtones asociados a tu linea.</entry>
+	<entry key="msjMisRbtComprar">En breve recibiras un mensaje con los pasos a seguir para comprar nuevos backtones.</entry>
+	<entry key="msjMusicaVideo">En breve recibiras un mensaje con la direccion de Personal </entry>
+	<entry key="msjUrlVideo">Ingresa al link http://m.personalvideo.com.py/</entry>
+	<entry key="msjUrlMusica">Ingresa al link http://m.personalmusica.com.py/</entry>
+	<entry key="msjMisDestinos">En breve recibiras un mensaje con los pasos a seguir.</entry>
+	<entry key="msjIngreseMail">Ingrese mail:</entry>
+	<entry key="msjConfirmarMail">Confirmar mail:</entry>
+	<entry key="msjFacturaFisica">Desea recibir factura fisica?</entry>
+	<entry key="msjMailNoCoincide">Las direcciones de mail no coinciden.</entry>
+	<entry key="msjBajaConfirmacion">Confirmar baja de servicio factura electronica.</entry>
+	<entry key="msjSaldoVencido">El saldo de tu Personal esta vencido. Acercate a alguno de nuestros puntos de venta mas cercanos y realiza una carga.</entry>
+	<entry key="msjSinFactura">Le informamos que a la fecha no cuenta con facturas pendientes.</entry>
+	<!--<entry key="msjSinServContraFac">Tu linea no cuenta con el servicio de Recarga contra Factura. Para activarlo presiona 1 y segui los pasos.</entry>-->
+	<entry key="msjSinServContraFac">Tu linea no cuenta con el servicio de Recarga contra Factura.</entry>
+	<entry key="msjNoPuede">Tu linea no puede realizar la siguiente operacion. Para mas informacion comunicate con el *111.</entry>
+	<entry key="msjNoPuedeDias">Solo podes realizar 1 modificacion por mes de este servicio. Para mas informacion comunicate al *111.</entry>
+	<entry key="msjSinFacturas">No se encontro datos de facturas</entry>
+	<entry key="msjConfirmarPrestame">Prestar Gs. %s a ser debitados en tu proxima %s. Costo Gs. %s %s</entry>
+	<entry key="msjConfirmarPrestameSinCosto">Prestar Gs. %s a ser debitados en tu proxima recarga/factura.</entry>
+
+	<entry key="noMostrar">INVISIBLE;RCORPCUG;RCORP;FNF;FNFPF</entry>
+
+</properties>

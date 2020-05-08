@@ -1,0 +1,10 @@
+url=jdbc:oracle:thin:@10.129.4.153:1521:kmldev2
+driverClassName=oracle.jdbc.OracleDriver
+username=pack_user
+password=qiK7S2824k6u
+maxActive=10
+maxIdle=10
+testOnBorrow=true
+validationQuery=select 1 from dual
+initialSize=1
+logValidationErrors=true
