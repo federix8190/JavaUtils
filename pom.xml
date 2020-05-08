@@ -73,7 +73,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>py.com.personal.webvas.mimundoussd.MiMundo</mainClass>
+                            <mainClass>py.com.konecta.Main</mainClass>
                             <classpathPrefix>ussd-miMundo_lib</classpathPrefix>
                         </manifest>
                     </archive>
