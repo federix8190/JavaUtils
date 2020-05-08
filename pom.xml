@@ -33,8 +33,11 @@
     </dependencies>
 	
     <build>
-        <finalName>java-utils</finalName>
+    
+        <finalName>appUtils</finalName>
+        
         <plugins>
+        
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
@@ -58,6 +61,7 @@
                     </execution>
                 </executions>
             </plugin>
+            
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
@@ -80,24 +84,29 @@
                     <finalName>appUtils</finalName>
                 </configuration>
             </plugin>
+            
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <version>3.0.2</version>
-                <executions>
-                    <execution>
-                        <id>copy-dependencies</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>copy-dependencies</goal>
-                        </goals>
-                        <configuration>
-                            <includeScope>runtime</includeScope>
-                            <outputDirectory>${project.build.directory}/ussd-miMundo_lib</outputDirectory>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
+		        <artifactId>maven-assembly-plugin</artifactId>
+		        <executions>
+		          <execution>
+		            <phase>package</phase>
+		            <goals>
+		              <goal>single</goal>
+		            </goals>
+		          </execution>
+		        </executions>
+		        <configuration>
+		        	<archive>
+				      <manifest>
+				        <mainClass>py.com.konecta.Main</mainClass>
+				      </manifest>
+				    </archive>
+		          <descriptorRefs>
+		            <descriptorRef>jar-with-dependencies</descriptorRef>
+		          </descriptorRefs>
+		        </configuration>
+		      </plugin>
+            
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
@@ -111,13 +120,10 @@
                 </executions>
                 <configuration>
                     <mainClass>py.com.konecta.Main</mainClass>
-                    <!--<arguments>595971876603</arguments>-->
                     <arguments>595976358660</arguments>
-                    <!--<arguments>595985674617</arguments>-->
-                    <!--<arguments>595971112869</arguments>-->
-                    <!--<arguments>595971111314</arguments>-->
                 </configuration>
             </plugin>
+            
         </plugins>
     </build>
 </project>
