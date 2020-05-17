@@ -2,6 +2,7 @@ package py.com.konecta;
 
 import java.io.InputStream;
 import java.io.StringWriter;
+import java.util.List;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.http.HttpEntity;
@@ -21,9 +22,17 @@ public class Main {
 	public static void main(String[] args) {
 		
 		System.out.println("");
-		System.out.println("Testeando llamada HTTP");
+		
+		/*System.out.println("Testeando llamada HTTP");
 		String datos = getDatos("localhost", 80, "/test/saldo.json");
+		System.out.println(datos);*/
+		
+		List<String> paises = Database.select(Database.POSTGRES, "localhost", "nucleo", "federix", "konecta");
+		System.out.println(paises);
+		
+		List<String> datos = Database.getCTE();
 		System.out.println(datos);
+		
 		System.out.println("");
 		
 	}

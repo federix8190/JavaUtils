@@ -3,6 +3,7 @@
 .settings/
 .tern-project
 target/
+dist/
 \.externalToolBuilders/
 
 *.class
