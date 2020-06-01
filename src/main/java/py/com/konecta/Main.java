@@ -27,14 +27,29 @@ public class Main {
 		String datos = getDatos("localhost", 80, "/test/saldo.json");
 		System.out.println(datos);*/
 		
-		List<String> paises = Database.select(Database.POSTGRES, "localhost", "nucleo", "federix", "konecta");
-		System.out.println(paises);
+		String[] cols = {"equipo_1", "equipo_2", "goles_1"};
+		List<Object[]> paises = Database.select(Database.POSTGRES, "localhost", "nucleo", "federix", "konecta", "resultados", cols);
+		printLista(paises);
 		
 		List<String> datos = Database.getCTE();
 		System.out.println(datos);
 		
 		System.out.println("");
+	}
+	
+	public static void printLista(List<Object[]> lista) {
 		
+		System.out.println("");
+		int i = 1;
+		for (Object[] datos : lista) {
+			System.out.println("");
+			System.out.print("Item " + i + " : ");
+			for (Object s : datos) {
+				System.out.print(s + " ");
+			}
+			i++;
+		}
+		System.out.println("");
 	}
 	
 	public static String getDatos(String server, int port, String path) {
