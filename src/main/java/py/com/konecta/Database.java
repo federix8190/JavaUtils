@@ -52,8 +52,6 @@ public class Database {
             	sql = sql + c + ", ";
             }
             sql = sql + cols.get(cols.size() - 1) + " FROM " + tabla;
-            System.err.println("\nSQL : " + sql + "\n");
-            
             ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {
             	Object[] d = new String[cols.size()];

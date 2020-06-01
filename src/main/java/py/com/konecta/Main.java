@@ -1,5 +1,6 @@
 package py.com.konecta;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.StringWriter;
 import java.util.List;
@@ -11,6 +12,7 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.HttpRequest;
 import org.apache.http.message.BasicHttpEntityEnclosingRequest;
 import org.apache.http.message.BasicHttpRequest;
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.HttpHost;
 import org.apache.http.HttpResponse;
@@ -19,7 +21,7 @@ import org.apache.http.client.entity.UrlEncodedFormEntity;
 
 public class Main {
 		
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InvalidFormatException, IOException {
 		
 		System.out.println("");
 		
@@ -35,6 +37,9 @@ public class Main {
 		System.out.println(datos);
 		
 		System.out.println("");
+		ExcelReader.procesar("");
+		
+		System.out.println("");
 	}
 	
 	public static void printLista(List<Object[]> lista) {
@@ -45,7 +50,7 @@ public class Main {
 			System.out.println("");
 			System.out.print("Item " + i + " : ");
 			for (Object s : datos) {
-				System.out.print(s + " ");
+				System.out.print(s + ", ");
 			}
 			i++;
 		}
