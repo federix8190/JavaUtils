@@ -22,6 +22,19 @@ public class Database {
 	
 	public static JSONArray select(int tipo, String host, String database, 
 			String user, String pass, String tabla, String[] columnas) {
+		
+		String sql = "SELECT ";
+        List<String> cols = Arrays.asList(columnas);
+        for (String c : cols.subList(0, cols.size() - 1)) {
+        	sql = sql + c + ", ";
+        }
+        sql = sql + cols.get(cols.size() - 1) + " FROM " + tabla;
+        
+        return select(tipo, host, database, user, pass, sql, cols);
+	}
+	
+	public static JSONArray select(int tipo, String host, String database, 
+			String user, String pass, String sql, List<String> cols) {
     	
     	Connection conn = null;
         Statement stmt = null;
@@ -32,7 +45,7 @@ public class Database {
         	url = "jdbc:postgresql://" + host + ":5432/" + database;
         } else if (tipo == SQLSERVER) {
         	driverClass = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-        	url = "jdbc:sqlserver://" + host + ":1433/" + database;
+        	url = "jdbc:sqlserver://" + host + ":1433;databaseName=" + database;
         }
         
         Properties props = new Properties();
@@ -46,21 +59,14 @@ public class Database {
         	Class.forName(driverClass);
             conn = DriverManager.getConnection(url, props);
             stmt = conn.createStatement();
-            String sql = "SELECT ";
-            List<String> cols = Arrays.asList(columnas);
-            for (String c : cols.subList(0, cols.size() - 1)) {
-            	sql = sql + c + ", ";
-            }
-            sql = sql + cols.get(cols.size() - 1) + " FROM " + tabla;
             ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {
             	Object[] d = new String[cols.size()];
-                String equipo_1 = rs.getString("equipo_1");
-                String equipo_2 = rs.getString("equipo_2");
-                String goles_1 = rs.getInt("goles_1") + "";
-                d[0] = equipo_1;
-                d[1] = equipo_2;
-                d[2] = goles_1;
+            	int i = 0;
+            	for (String col : cols) {
+            		d[i] = rs.getString(col);
+            		i++;
+            	}
                 json.add(d);
             }
             rs.close();
@@ -83,6 +89,59 @@ public class Database {
         }
         
         return json;
+    }
+	
+	public static List<String> select(int tipo, String host, String database, 
+			String user, String pass, String sql, String col) {
+    	
+    	Connection conn = null;
+        Statement stmt = null;
+        String driverClass = "";
+        String url = "";
+        
+        if (tipo == POSTGRES) {
+        	driverClass = "org.postgresql.Driver";
+        	url = "jdbc:postgresql://" + host + ":5432/" + database;
+        } else if (tipo == SQLSERVER) {
+        	driverClass = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
+        	url = "jdbc:sqlserver://" + host + ":1433;databaseName=" + database;
+        }
+        
+        Properties props = new Properties();
+        props.setProperty("user", user);
+        props.setProperty("password", pass);
+        List<String> datos = new ArrayList<String>();
+        
+        try {
+        	
+        	Class.forName(driverClass);
+            conn = DriverManager.getConnection(url, props);
+            stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            while (rs.next()) {
+            	String d = rs.getString(col);
+            	datos.add(d);
+            }
+            rs.close();
+            
+        } catch (SQLException se) {
+        	System.err.println("Error al ejecutar sentencia SQL : " + se.getMessage());
+        } catch (Exception e) {            
+        	System.err.println("Error Generico : " + e.getMessage());
+        } finally {
+            try {
+                if (stmt != null) stmt.close();
+            } catch (SQLException se) {
+            	System.err.println("Error al cerrar sentencia a BBDD : " + se.getMessage());
+            }
+            try {
+                if (conn != null) conn.close();
+            } catch (SQLException se) {
+            	System.err.println("Error al cerrar conexion a BBDD : " + se.getMessage());
+            }
+        }
+        
+        return datos;
     }
 	
 	public static List<String> getEquipos() {
